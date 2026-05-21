@@ -101,7 +101,63 @@
     });
   }
 
-  /* ---- 4. Poster click → swap in autoplaying Vimeo iframe ---- */
+  /* ---- 4. Hover preview — swap still for GIF / MP4 on first hover */
+  /* Preview asset is loaded only on first hover to keep heavy GIFs off
+     the initial page weight. After insertion it stays in the DOM so
+     subsequent hovers are instant. */
+  var previewTiles = document.querySelectorAll("[data-preview]");
+
+  previewTiles.forEach(function (tile) {
+    var inserted = false;
+    var previewEl = null;
+
+    function ensurePreview() {
+      if (inserted) return;
+      inserted = true;
+      var src = tile.getAttribute("data-preview");
+      if (!src) return;
+      var ext = src.split(".").pop().toLowerCase().split("?")[0];
+
+      if (ext === "mp4" || ext === "webm" || ext === "mov") {
+        previewEl = document.createElement("video");
+        previewEl.muted = true;
+        previewEl.loop = true;
+        previewEl.playsInline = true;
+        previewEl.preload = "auto";
+        previewEl.src = src;
+      } else {
+        previewEl = document.createElement("img");
+        previewEl.src = src;
+        previewEl.alt = "";
+        previewEl.decoding = "async";
+      }
+      previewEl.className = "work-card__preview";
+
+      // Insert before the brand layer so the logo stays on top
+      var brand = tile.querySelector(".work-card__brand");
+      if (brand) tile.insertBefore(previewEl, brand);
+      else tile.appendChild(previewEl);
+    }
+
+    tile.addEventListener("mouseenter", function () {
+      ensurePreview();
+      if (previewEl && previewEl.tagName === "VIDEO") {
+        previewEl.currentTime = 0;
+        previewEl.play().catch(function () {});
+      }
+    });
+
+    tile.addEventListener("mouseleave", function () {
+      if (previewEl && previewEl.tagName === "VIDEO") {
+        previewEl.pause();
+      }
+    });
+
+    // Touch / focus: also ensure preview for keyboard users
+    tile.addEventListener("focus", ensurePreview);
+  });
+
+  /* ---- 5. Tile click → swap in autoplaying Vimeo iframe ----- */
   var posters = document.querySelectorAll("[data-vimeo]");
 
   posters.forEach(function (poster) {
@@ -133,7 +189,7 @@
     });
   });
 
-  /* ---- 5. Auto-update footer year --------------------------- */
+  /* ---- 6. Auto-update footer year --------------------------- */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
