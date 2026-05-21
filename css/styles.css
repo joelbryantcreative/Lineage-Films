@@ -7,24 +7,31 @@
    1. Tokens — colours, type, spacing
    ------------------------------------------------------------- */
 :root {
-  /* Palette */
-  --deep-forest: #1f2a24;
-  --heartwood-rust: #8b4a3c;
-  --bone: #efe6d4;
-  --bone-soft: #f6efe0;
-  --moss: #5a6b4d;
-  --smoke: #7a736a;
-  --near-black: #0e0e0e;
+  /* Brand palette — sampled from logo, see README */
+  --heartwood: #5e2e22; /* primary warm — CTA, brand signature surface */
+  --tallow:    #e8c9a0; /* primary light — text on dark, the mark */
+  --parchment: #f3eada; /* page surface — light sections */
+  --loam:      #1a1814; /* deep — hero, footer, near-black with brown undertone */
+  --bracken:   #3d4438; /* forest — Approach, Services, warmer than blue-green */
+  --moss:      #6f7a5e; /* accent — hover, supporting graphics */
+  --smoke:     #857a6d; /* body copy on parchment */
+
+  /* Legacy aliases — existing rules read these names */
+  --deep-forest:    var(--bracken);
+  --heartwood-rust: var(--heartwood);
+  --bone:           var(--tallow);
+  --bone-soft:      var(--parchment);
+  --near-black:     var(--loam);
 
   /* Semantic */
-  --bg: var(--bone-soft);
-  --bg-dark: var(--deep-forest);
-  --bg-accent: var(--heartwood-rust);
-  --text: #2a2722;
+  --bg: var(--parchment);
+  --bg-dark: var(--bracken);
+  --bg-accent: var(--heartwood);
+  --text: #2a2218; /* warm near-black for body on parchment */
   --text-muted: var(--smoke);
-  --text-on-dark: var(--bone);
-  --rule: rgba(42, 39, 34, 0.12);
-  --rule-on-dark: rgba(239, 230, 212, 0.18);
+  --text-on-dark: var(--tallow);
+  --rule: rgba(42, 34, 24, 0.12);
+  --rule-on-dark: rgba(232, 201, 160, 0.18);
 
   /* Typography */
   --font-serif: "Cormorant Garamond", "GT Sectra", Georgia, "Times New Roman",
@@ -183,7 +190,7 @@ p { margin: 0; }
 }
 
 .section-label--centered { text-align: center; }
-.section-label--on-rust  { color: rgba(239, 230, 212, 0.75); }
+.section-label--on-rust  { color: rgba(232, 201, 160, 0.75); }
 
 .section-heading {
   font-size: var(--fs-h2);
@@ -224,7 +231,7 @@ p { margin: 0; }
 }
 
 .site-header.is-scrolled {
-  background: rgba(31, 42, 36, 0.92);
+  background: rgba(61, 68, 56, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--rule-on-dark);
@@ -401,15 +408,15 @@ p { margin: 0; }
   background:
     radial-gradient(
       ellipse at 30% 75%,
-      rgba(139, 74, 60, 0.55) 0%,
-      rgba(139, 74, 60, 0) 55%
+      rgba(94, 46, 34, 0.55) 0%,
+      rgba(94, 46, 34, 0) 55%
     ),
     radial-gradient(
       ellipse at 80% 20%,
-      rgba(90, 107, 77, 0.35) 0%,
-      rgba(90, 107, 77, 0) 60%
+      rgba(111, 122, 94, 0.35) 0%,
+      rgba(111, 122, 94, 0) 60%
     ),
-    linear-gradient(180deg, #0e0e0e 0%, #1f2a24 55%, #0e0e0e 100%);
+    linear-gradient(180deg, #1a1814 0%, #3d4438 55%, #1a1814 100%);
 }
 
 /* Vignette + dark overlay so text always sits on a calm field */
@@ -420,10 +427,10 @@ p { margin: 0; }
   background:
     linear-gradient(
       180deg,
-      rgba(14, 14, 14, 0.4) 0%,
-      rgba(14, 14, 14, 0) 30%,
-      rgba(14, 14, 14, 0) 70%,
-      rgba(14, 14, 14, 0.55) 100%
+      rgba(26, 24, 20, 0.4) 0%,
+      rgba(26, 24, 20, 0) 30%,
+      rgba(26, 24, 20, 0) 70%,
+      rgba(26, 24, 20, 0.55) 100%
     );
   pointer-events: none;
 }
@@ -440,7 +447,7 @@ p { margin: 0; }
   font-size: var(--fs-eyebrow);
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(239, 230, 212, 0.75);
+  color: rgba(232, 201, 160, 0.75);
   margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -459,7 +466,7 @@ p { margin: 0; }
   font-family: var(--font-serif);
   font-style: italic;
   font-size: var(--fs-hero-sub);
-  color: rgba(239, 230, 212, 0.88);
+  color: rgba(232, 201, 160, 0.88);
 }
 
 .hero__scroll {
@@ -471,7 +478,7 @@ p { margin: 0; }
   flex-direction: column;
   align-items: center;
   gap: 0.625rem;
-  color: rgba(239, 230, 212, 0.7);
+  color: rgba(232, 201, 160, 0.7);
 }
 
 .hero__scroll-label {
@@ -517,14 +524,14 @@ p { margin: 0; }
   }
 }
 
-.approach__intro .section-label { color: rgba(239, 230, 212, 0.65); }
+.approach__intro .section-label { color: rgba(232, 201, 160, 0.65); }
 
 .approach__manifesto {
   margin-top: var(--space-md);
   font-family: var(--font-serif);
   font-size: clamp(1.1875rem, 1.6vw, 1.5rem);
   line-height: 1.45;
-  color: rgba(239, 230, 212, 0.92);
+  color: rgba(232, 201, 160, 0.92);
 }
 
 .approach__manifesto + .approach__manifesto { margin-top: var(--space-sm); }
@@ -560,7 +567,7 @@ p { margin: 0; }
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.18em;
-  color: rgba(239, 230, 212, 0.55);
+  color: rgba(232, 201, 160, 0.55);
 }
 
 .pillar__title {
@@ -603,7 +610,7 @@ p { margin: 0; }
   font-family: var(--font-serif);
   font-size: 1.125rem;
   line-height: 1.5;
-  color: rgba(239, 230, 212, 0.78);
+  color: rgba(232, 201, 160, 0.78);
   max-width: 36rem;
 }
 
@@ -676,7 +683,7 @@ p { margin: 0; }
   padding: var(--space-2xl) 0;
 }
 
-.services .section-label { color: rgba(239, 230, 212, 0.65); }
+.services .section-label { color: rgba(232, 201, 160, 0.65); }
 
 .services__grid {
   display: grid;
@@ -712,7 +719,7 @@ p { margin: 0; }
 }
 
 .service-card__desc {
-  color: rgba(239, 230, 212, 0.78);
+  color: rgba(232, 201, 160, 0.78);
   font-size: 1.0625rem;
   line-height: 1.55;
   max-width: 28rem;
@@ -768,7 +775,7 @@ p { margin: 0; }
   padding: var(--space-2xl) 0;
 }
 
-.testimonials .section-label { color: rgba(239, 230, 212, 0.65); }
+.testimonials .section-label { color: rgba(232, 201, 160, 0.65); }
 
 .testimonials__grid {
   display: grid;
@@ -784,7 +791,7 @@ p { margin: 0; }
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 1.8vw, 1.5rem);
   line-height: 1.45;
-  color: rgba(239, 230, 212, 0.92);
+  color: rgba(232, 201, 160, 0.92);
   margin: 0 0 1.5rem;
   font-style: italic;
   padding-left: 1rem;
@@ -802,7 +809,7 @@ p { margin: 0; }
 }
 
 .testimonial__name { color: var(--bone); }
-.testimonial__role { color: rgba(239, 230, 212, 0.55); }
+.testimonial__role { color: rgba(232, 201, 160, 0.55); }
 
 /* Logo strip */
 .logo-strip {
@@ -823,7 +830,7 @@ p { margin: 0; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-align: center;
-  color: rgba(239, 230, 212, 0.5);
+  color: rgba(232, 201, 160, 0.5);
   filter: grayscale(1);
   transition: color 200ms var(--ease), filter 200ms var(--ease);
 }
@@ -846,14 +853,14 @@ p { margin: 0; }
   text-align: center;
 }
 
-.latest .section-label { color: rgba(239, 230, 212, 0.55); }
+.latest .section-label { color: rgba(232, 201, 160, 0.55); }
 
 .latest__desc {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(239, 230, 212, 0.7);
+  color: rgba(232, 201, 160, 0.7);
   margin-top: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
@@ -921,7 +928,7 @@ p { margin: 0; }
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(239, 230, 212, 0.82);
+  color: rgba(232, 201, 160, 0.82);
 }
 
 .contact__founder a { border-bottom: 1px solid currentColor; }
@@ -944,7 +951,7 @@ p { margin: 0; }
    ------------------------------------------------------------- */
 .site-footer {
   background: var(--near-black);
-  color: rgba(239, 230, 212, 0.7);
+  color: rgba(232, 201, 160, 0.7);
   padding: var(--space-xl) 0;
 }
 
@@ -989,5 +996,5 @@ p { margin: 0; }
 @media (min-width: 48rem) {
   .site-footer__meta { justify-self: center; text-align: center; }
   .site-footer__eco  { grid-column: 1 / -1; justify-self: center; text-align: center; }
-  .site-footer__copy { grid-column: 1 / -1; justify-self: center; text-align: center; color: rgba(239, 230, 212, 0.45); }
+  .site-footer__copy { grid-column: 1 / -1; justify-self: center; text-align: center; color: rgba(232, 201, 160, 0.45); }
 }
