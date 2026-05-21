@@ -299,16 +299,20 @@
             </li>
 
             <li class="work-card">
-              <div class="work-card__media">
-                <iframe
-                  src="https://player.vimeo.com/video/1052845867?dnt=1&title=0&byline=0&portrait=0"
-                  title="Rogue Watches"
+              <button
+                class="work-card__media work-card__poster"
+                type="button"
+                data-vimeo="1052845867"
+                aria-label="Play Rogue Watches"
+              >
+                <img
+                  src="/public/images/Rogue-placeholder.gif"
+                  alt=""
                   loading="lazy"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
+                  decoding="async"
+                />
+                <span class="work-card__play-icon" aria-hidden="true">▶</span>
+              </button>
               <p class="work-card__client">Film &mdash; <!-- PLACEHOLDER: client / year --></p>
               <h3 class="work-card__title">rogue watches</h3>
             </li>

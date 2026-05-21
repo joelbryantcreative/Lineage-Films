@@ -101,7 +101,38 @@
     });
   }
 
-  /* ---- 4. Auto-update footer year --------------------------- */
+  /* ---- 4. Poster click → swap in autoplaying Vimeo iframe ---- */
+  var posters = document.querySelectorAll("[data-vimeo]");
+
+  posters.forEach(function (poster) {
+    poster.addEventListener("click", function () {
+      var id = poster.getAttribute("data-vimeo");
+      if (!id) return;
+
+      var iframe = document.createElement("iframe");
+      iframe.setAttribute(
+        "src",
+        "https://player.vimeo.com/video/" +
+          encodeURIComponent(id) +
+          "?autoplay=1&dnt=1&title=0&byline=0&portrait=0"
+      );
+      iframe.setAttribute("title", poster.getAttribute("aria-label") || "Vimeo player");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute(
+        "allow",
+        "autoplay; fullscreen; picture-in-picture"
+      );
+      iframe.setAttribute("allowfullscreen", "");
+
+      // Reuse the poster's media slot so the layout doesn't jump
+      var wrap = document.createElement("div");
+      wrap.className = "work-card__media";
+      wrap.appendChild(iframe);
+      poster.replaceWith(wrap);
+    });
+  });
+
+  /* ---- 5. Auto-update footer year --------------------------- */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
