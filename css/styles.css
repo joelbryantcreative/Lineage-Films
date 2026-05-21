@@ -922,6 +922,11 @@ p { margin: 0; }
 }
 
 .trusted__grid li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  width: 100%;
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2vw, 1.625rem);
   font-weight: 500;
@@ -933,6 +938,32 @@ p { margin: 0; }
 
 .trusted__grid li:hover {
   color: var(--tallow);
+  transform: translateY(-1px);
+}
+
+/* Real logo PNGs: force monochrome cream tone so the band reads as
+   one uniform set, regardless of the source logo colour. */
+.trusted__grid img {
+  max-height: 2.5rem;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* black-on-transparent -> cream. brightness(0) collapses any colour
+     to black, invert(1) flips to white, then sepia + saturate warms it
+     toward Tallow. */
+  filter: brightness(0) invert(1) sepia(0.35) saturate(0.6)
+    hue-rotate(-10deg) opacity(0.85);
+  transition: filter 200ms var(--ease), transform 200ms var(--ease);
+}
+
+@media (min-width: 64rem) {
+  .trusted__grid img { max-height: 2.75rem; }
+}
+
+.trusted__grid li:hover img {
+  filter: brightness(0) invert(1) sepia(0.35) saturate(0.6)
+    hue-rotate(-10deg) opacity(1);
   transform: translateY(-1px);
 }
 
