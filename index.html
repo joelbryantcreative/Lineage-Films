@@ -110,22 +110,22 @@
            ============================================================ -->
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero__media" aria-hidden="true">
-          <!-- Placeholder gradient until /public/videos/hero-placeholder.mp4 is added.
-               When the video file is present, uncomment the <video> below. -->
-          <!--
-          <video
-            class="hero__video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="/public/images/hero-poster.jpg"
-          >
-            <source src="/public/videos/hero-placeholder.mp4" type="video/mp4" />
-          </video>
-          -->
+          <!-- Gradient sits behind the iframe as a fallback while it loads
+               (and if it fails). -->
           <div class="hero__gradient"></div>
+
+          <div class="hero__video-wrap">
+            <iframe
+              class="hero__video"
+              src="https://player.vimeo.com/video/1037171037?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&dnt=1"
+              title="Lineage Films reel"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              loading="eager"
+              tabindex="-1"
+            ></iframe>
+          </div>
         </div>
 
         <div class="hero__inner">
