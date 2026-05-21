@@ -735,8 +735,8 @@ iframe.work-card__preview {
 }
 
 .work-card__brand img {
-  max-width: 38%;
-  max-height: 36%;
+  max-width: 19%;
+  max-height: 18%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -748,15 +748,15 @@ iframe.work-card__preview {
    since it's a compact circular mark, not a wide wordmark */
 .work-card__brand img[alt="Lineage Films"] {
   filter: none;
-  max-width: 18%;
-  max-height: 34%;
+  max-width: 9%;
+  max-height: 17%;
 }
 
 /* Collab lockup: two logos + × between. Each capped tighter so the
    pair plus the cross fits within ~70% of tile width. */
 .work-card__brand--collab img {
-  max-width: 26%;
-  max-height: 28%;
+  max-width: 13%;
+  max-height: 14%;
 }
 
 /* Text wordmark fallback when no logo PNG is available */
