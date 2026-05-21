@@ -690,7 +690,6 @@ p { margin: 0; }
 .work-card__tile:hover .work-card__still,
 .work-card__tile:focus-visible .work-card__still {
   opacity: 0;
-  transform: scale(1.04);
 }
 
 .work-card__tile:hover .work-card__preview,
@@ -711,7 +710,6 @@ p { margin: 0; }
   gap: 0.6rem;
   padding-bottom: 6%;
   z-index: 2;
-  transition: transform 500ms var(--ease), opacity 300ms var(--ease);
 }
 
 /* Genre label, bottom-left, on top of the tile */
@@ -774,41 +772,6 @@ p { margin: 0; }
   flex-shrink: 0;
 }
 
-.work-card__tile:hover .work-card__brand,
-.work-card__tile:focus-visible .work-card__brand {
-  transform: scale(0.98);
-}
-
-/* Play affordance — circle with triangle, fades in on hover */
-.work-card__tile::after {
-  content: "▶";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(26, 24, 20, 0.65);
-  color: var(--tallow);
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 4px; /* optical centring of the triangle */
-  transform: translate(-50%, -50%) scale(0.85);
-  opacity: 0;
-  transition: opacity 300ms var(--ease), transform 300ms var(--ease),
-    background 200ms var(--ease);
-  pointer-events: none;
-  z-index: 4;
-}
-
-.work-card__tile:hover::after,
-.work-card__tile:focus-visible::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-  background-color: var(--heartwood);
-}
 
 /* Tile (after click) — iframe wrapper replaces the button */
 .work-card__tile--playing { background: #000; }
