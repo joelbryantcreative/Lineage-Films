@@ -941,17 +941,16 @@ p { margin: 0; }
   transform: translateY(-1px);
 }
 
-/* Real logo PNGs: force monochrome cream tone so the band reads as
-   one uniform set, regardless of the source logo colour. */
+/* Real logo PNGs: forced to monochrome cream tone so the band reads
+   as one uniform set, regardless of the source logo colour. Source
+   files are tightly cropped (no canvas whitespace), so we can use
+   uniform height + max-width without per-logo overrides. */
 .trusted__grid img {
-  --logo-scale: 1;
   max-height: 4rem;
-  max-width: 100%;
+  max-width: 78%;
   width: auto;
   height: auto;
   object-fit: contain;
-  transform: scale(var(--logo-scale));
-  transform-origin: center center;
   /* black-on-transparent -> cream. brightness(0) collapses any colour
      to black, invert(1) flips to white, then sepia + saturate warms it
      toward Tallow. */
@@ -961,28 +960,14 @@ p { margin: 0; }
 }
 
 @media (min-width: 64rem) {
-  .trusted__grid li { min-height: 5.5rem; }
-  .trusted__grid img { max-height: 4.5rem; }
+  .trusted__grid li { min-height: 6rem; }
+  .trusted__grid img { max-height: 4.75rem; }
 }
-
-/* Per-logo scale compensation. Source PNGs have different amounts of
-   canvas whitespace, so logos that don't fill their bounding box get
-   bumped up here. Eyeball values; tweak after seeing them live. */
-.trusted__grid img[alt="The Breath Haus"]         { --logo-scale: 1.45; }
-.trusted__grid img[alt="Convivio"]                { --logo-scale: 1.55; }
-.trusted__grid img[alt="Kalio"]                   { --logo-scale: 1.25; }
-.trusted__grid img[alt="Rogue Watches"]           { --logo-scale: 1.35; }
-.trusted__grid img[alt="Byron Bay Film Festival"] { --logo-scale: 1.15; }
-.trusted__grid img[alt="Noosa Film Festival"]     { --logo-scale: 1.15; }
-.trusted__grid img[alt="Ultimate Ears"]           { --logo-scale: 1.3; }
-.trusted__grid img[alt="Fat Fish Bikes"]          { --logo-scale: 1.35; }
-.trusted__grid img[alt="Salty Cabins"]            { --logo-scale: 1.35; }
-.trusted__grid img[alt="Away at Byron Bay"]       { --logo-scale: 1.2; }
 
 .trusted__grid li:hover img {
   filter: brightness(0) invert(1) sepia(0.35) saturate(0.6)
     hue-rotate(-10deg) opacity(1);
-  transform: scale(var(--logo-scale)) translateY(-1px);
+  transform: translateY(-1px);
 }
 
 /* -------------------------------------------------------------
