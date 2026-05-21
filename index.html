@@ -284,16 +284,20 @@
             </li>
 
             <li class="work-card">
-              <div class="work-card__media">
-                <iframe
-                  src="https://player.vimeo.com/video/1078502850?dnt=1&title=0&byline=0&portrait=0"
-                  title="Bytropic"
+              <button
+                class="work-card__media work-card__poster"
+                type="button"
+                data-vimeo="1078502850"
+                aria-label="Play Bytropic"
+              >
+                <img
+                  src="/public/images/Bytropic-placeholder.gif"
+                  alt=""
                   loading="lazy"
-                  frameborder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
+                  decoding="async"
+                />
+                <span class="work-card__play-icon" aria-hidden="true">▶</span>
+              </button>
               <p class="work-card__client">Brand Film</p>
               <h3 class="work-card__title">bytropic</h3>
             </li>
