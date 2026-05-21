@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1F2A24" />
+
+    <title>Lineage Films — Cinematic brand films & documentary, Byron Bay</title>
+    <meta
+      name="description"
+      content="Lineage Films is a Byron Bay cinematic studio making brand films and documentary work for regenerative, heritage and soulful operators. Films with roots."
+    />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lineage Films" />
+    <meta property="og:title" content="Lineage Films — Films with roots" />
+    <meta
+      property="og:description"
+      content="Brand films & documentary, made for depth. Byron Bay, worldwide work."
+    />
+    <meta property="og:image" content="/public/images/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/public/favicon.ico" sizes="any" />
+    <link rel="icon" href="/public/logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/public/logo.png" />
+
+    <!-- Fonts: Cormorant Garamond (serif), Inter (sans), JetBrains Mono (mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- JSON-LD: Local business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Lineage Films",
+        "description": "Cinematic brand films and documentary work, made for depth. Based in Byron Bay, working worldwide.",
+        "image": "https://lineagefilms.com.au/public/logo.png",
+        "url": "https://lineagefilms.com.au",
+        "email": "hello@lineagefilms.com.au",
+        "founder": {
+          "@type": "Person",
+          "name": "Joel Bryant",
+          "url": "https://joelbryant.com.au"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Byron Bay",
+          "addressRegion": "NSW",
+          "addressCountry": "AU"
+        },
+        "areaServed": "Worldwide",
+        "sameAs": [
+          "https://www.instagram.com/joelbryant_"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ============================================================
+         HEADER (fixed) — logo top-left, nav top-right
+         ============================================================ -->
+    <header class="site-header" data-header>
+      <a href="#top" class="site-header__logo" aria-label="Lineage Films — home">
+        <img
+          src="/public/logo.svg"
+          alt="Lineage Films"
+          width="44"
+          height="44"
+          onerror="this.onerror=null;this.src='/public/logo.png';"
+        />
+        <span class="site-header__wordmark">Lineage Films</span>
+      </a>
+
+      <button
+        class="site-header__toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+        data-nav-toggle
+      >
+        <span class="sr-only">Menu</span>
+        <span class="site-header__toggle-bar" aria-hidden="true"></span>
+        <span class="site-header__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="site-nav" data-nav>
+        <ul>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact" class="site-nav__cta">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ============================================================
+           1. HERO — full-viewport video background
+           ============================================================ -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__media" aria-hidden="true">
+          <!-- Placeholder gradient until /public/videos/hero-placeholder.mp4 is added.
+               When the video file is present, uncomment the <video> below. -->
+          <!--
+          <video
+            class="hero__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/public/images/hero-poster.jpg"
+          >
+            <source src="/public/videos/hero-placeholder.mp4" type="video/mp4" />
+          </video>
+          -->
+          <div class="hero__gradient"></div>
+        </div>
+
+        <div class="hero__inner">
+          <p class="hero__eyebrow">Byron Bay — Worldwide</p>
+          <h1 id="hero-heading" class="hero__headline">films with roots.</h1>
+          <p class="hero__subline">
+            <em>Brand films &amp; documentary, made for depth.</em>
+          </p>
+        </div>
+
+        <a href="#approach" class="hero__scroll" aria-label="Scroll to next section">
+          <span class="hero__scroll-label">Scroll</span>
+          <span class="hero__scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <!-- ============================================================
+           2. ABOUT / APPROACH — Deep Forest bg, Bone text
+           ============================================================ -->
+      <section id="approach" class="approach" aria-labelledby="approach-heading">
+        <div class="container approach__grid">
+          <div class="approach__intro">
+            <p class="section-label">01 / Approach</p>
+            <h2 id="approach-heading" class="section-heading">
+              made for what lasts.
+            </h2>
+            <!-- PLACEHOLDER: manifesto copy — Joel to finalise -->
+            <p class="approach__manifesto">
+              Lineage Films makes cinematic films for people doing real work in
+              right relationship with land, body, and tradition. We embed with
+              operators building something worth passing on — and shape what we
+              find into films that hold their weight.
+            </p>
+            <p class="approach__manifesto">
+              In an age of generated everything, we make films that were
+              actually there. Real people. Real places. Real practices. Films
+              that carry forward.
+            </p>
+          </div>
+
+          <div class="approach__pillars">
+            <details class="pillar" data-pillar open>
+              <summary class="pillar__summary">
+                <span class="pillar__index">01</span>
+                <span class="pillar__title">Witness</span>
+                <span class="pillar__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="pillar__body">
+                <p>
+                  We don&rsquo;t manufacture stories. We find them, embed with
+                  them, and shape them into films that hold their weight.
+                </p>
+              </div>
+            </details>
+
+            <details class="pillar" data-pillar>
+              <summary class="pillar__summary">
+                <span class="pillar__index">02</span>
+                <span class="pillar__title">Craft</span>
+                <span class="pillar__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="pillar__body">
+                <p>
+                  Every frame is deliberate. Every cut serves the story.
+                  Cinematography that earns the screen time.
+                </p>
+              </div>
+            </details>
+
+            <details class="pillar" data-pillar>
+              <summary class="pillar__summary">
+                <span class="pillar__index">03</span>
+                <span class="pillar__title">Depth</span>
+                <span class="pillar__icon" aria-hidden="true"></span>
+              </summary>
+              <div class="pillar__body">
+                <p>
+                  We make films for what lasts — not the campaign cycle.
+                  Stories worth carrying forward.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           3. WORK / PROJECTS — six-card grid (placeholders)
+           ============================================================ -->
+      <section id="work" class="work" aria-labelledby="work-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label">02 / Work</p>
+            <h2 id="work-heading" class="section-heading">selected films.</h2>
+          </header>
+
+          <ul class="work__grid">
+            <!-- PLACEHOLDER: replace with real case studies -->
+            <li class="work-card">
+              <a href="#" class="work-card__link">
+                <div class="work-card__thumb">
+                  <span class="work-card__play" aria-hidden="true">▶</span>
+                </div>
+                <p class="work-card__client">Client Name</p>
+                <h3 class="work-card__title">Project title goes here</h3>
+                <p class="work-card__desc">
+                  Short one-line description of the film and its intent.
+                </p>
+              </a>
+            </li>
+            <li class="work-card">
+              <a href="#" class="work-card__link">
+                <div class="work-card__thumb">
+                  <span class="work-card__play" aria-hidden="true">▶</span>
+                </div>
+                <p class="work-card__client">Client Name</p>
+                <h3 class="work-card__title">Project title goes here</h3>
+                <p class="work-card__desc">
+                  Short one-line description of the film and its intent.
+                </p>
+              </a>
+            </li>
+            <li class="work-card">
+              <a href="#" class="work-card__link">
+                <div class="work-card__thumb">
+                  <span class="work-card__play" aria-hidden="true">▶</span>
+                </div>
+                <p class="work-card__client">Client Name</p>
+                <h3 class="work-card__title">Project title goes here</h3>
+                <p class="work-card__desc">
+                  Short one-line description of the film and its intent.
+                </p>
+              </a>
+            </li>
+            <li class="work-card">
+              <a href="#" class="work-card__link">
+                <div class="work-card__thumb">
+                  <span class="work-card__play" aria-hidden="true">▶</span>
+                </div>
+                <p class="work-card__client">Client Name</p>
+                <h3 class="work-card__title">Project title goes here</h3>
+                <p class="work-card__desc">
+                  Short one-line description of the film and its intent.
+                </p>
+              </a>
+            </li>
+            <li class="work-card">
+              <a href="#" class="work-card__link">
+                <div class="work-card__thumb">
+                  <span class="work-card__play" aria-hidden="true">▶</span>
+                </div>
+                <p class="work-card__client">Client Name</p>
+                <h3 class="work-card__title">Project title goes here</h3>
+                <p class="work-card__desc">
+                  Short one-line description of the film and its intent.
+                </p>
+              </a>
+            </li>
+            <li class="work-card">
+              <a href="#" class="work-card__link">
+                <div class="work-card__thumb">
+                  <span class="work-card__play" aria-hidden="true">▶</span>
+                </div>
+                <p class="work-card__client">Client Name</p>
+                <h3 class="work-card__title">Project title goes here</h3>
+                <p class="work-card__desc">
+                  Short one-line description of the film and its intent.
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           4. SERVICES — three offering cards
+           ============================================================ -->
+      <section id="services" class="services" aria-labelledby="services-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label">03 / Services</p>
+            <h2 id="services-heading" class="section-heading">
+              what we make.
+            </h2>
+          </header>
+
+          <ul class="services__grid">
+            <li class="service-card">
+              <p class="service-card__label">Brand Films</p>
+              <h3 class="service-card__title">Hero films, made to last.</h3>
+              <p class="service-card__desc">
+                Hero films, campaign work, and founder portraits for soulful
+                premium brands.
+              </p>
+            </li>
+            <li class="service-card">
+              <p class="service-card__label">Documentary</p>
+              <h3 class="service-card__title">Long-form, observational.</h3>
+              <p class="service-card__desc">
+                Long-form storytelling and observational work for operators
+                with stories worth holding.
+              </p>
+            </li>
+            <li class="service-card">
+              <p class="service-card__label">Heritage &amp; Provenance</p>
+              <h3 class="service-card__title">Place. People. Practice.</h3>
+              <p class="service-card__desc">
+                Multi-generational, place-based stories — the long line of the
+                work, on film.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           5. WHO WE WORK WITH — two-column list
+           ============================================================ -->
+      <section id="clients" class="clients" aria-labelledby="clients-heading">
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label">04 / Who we work with</p>
+            <h2 id="clients-heading" class="section-heading">
+              operators building for the long line.
+            </h2>
+          </header>
+
+          <div class="clients__cols">
+            <div class="clients__col">
+              <p class="clients__col-label">Industries</p>
+              <ul class="clients__list">
+                <li>Wellness &amp; Retreats</li>
+                <li>Regenerative Agriculture</li>
+                <li>Conservation &amp; Climate</li>
+                <li>Heritage Hospitality</li>
+                <li>Soulful Brands</li>
+              </ul>
+            </div>
+            <div class="clients__col">
+              <p class="clients__col-label">Outputs</p>
+              <ul class="clients__list">
+                <li>Hero brand films</li>
+                <li>Founder &amp; practitioner portraits</li>
+                <li>Documentary shorts</li>
+                <li>Campaign content</li>
+                <li>Behind-the-scenes &amp; PR stills</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           6. TESTIMONIALS + client logo strip
+           ============================================================ -->
+      <section
+        id="testimonials"
+        class="testimonials"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="container">
+          <header class="section-header">
+            <p class="section-label">05 / Testimonials</p>
+            <h2 id="testimonials-heading" class="section-heading">
+              what they say.
+            </h2>
+          </header>
+
+          <ul class="testimonials__grid">
+            <!-- PLACEHOLDER: replace with real testimonials -->
+            <li class="testimonial">
+              <blockquote class="testimonial__quote">
+                A short, considered quote that speaks to what the work felt
+                like and what it has carried forward.
+              </blockquote>
+              <p class="testimonial__attr">
+                <span class="testimonial__name">Client Name</span>
+                <span class="testimonial__role">Founder, Brand Name</span>
+              </p>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial__quote">
+                A short, considered quote that speaks to what the work felt
+                like and what it has carried forward.
+              </blockquote>
+              <p class="testimonial__attr">
+                <span class="testimonial__name">Client Name</span>
+                <span class="testimonial__role">Founder, Brand Name</span>
+              </p>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial__quote">
+                A short, considered quote that speaks to what the work felt
+                like and what it has carried forward.
+              </blockquote>
+              <p class="testimonial__attr">
+                <span class="testimonial__name">Client Name</span>
+                <span class="testimonial__role">Founder, Brand Name</span>
+              </p>
+            </li>
+          </ul>
+
+          <ul class="logo-strip" aria-label="Selected clients">
+            <!-- PLACEHOLDER: replace with real client logos -->
+            <li class="logo-strip__item">Client</li>
+            <li class="logo-strip__item">Client</li>
+            <li class="logo-strip__item">Client</li>
+            <li class="logo-strip__item">Client</li>
+            <li class="logo-strip__item">Client</li>
+            <li class="logo-strip__item">Client</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           7. LATEST FILM — single featured player
+           ============================================================ -->
+      <section id="latest" class="latest" aria-labelledby="latest-heading">
+        <div class="container latest__inner">
+          <p class="section-label section-label--centered">06 / Latest</p>
+          <h2 id="latest-heading" class="section-heading section-heading--centered">
+            our latest film.
+          </h2>
+          <p class="latest__desc">
+            A short monospaced caption for the featured film. Title, client,
+            and year sit here once the film is published.
+          </p>
+
+          <div class="latest__player" aria-label="Featured film player">
+            <!-- PLACEHOLDER: drop in the embedded player or <video> when ready -->
+            <div class="latest__placeholder">
+              <span class="latest__play" aria-hidden="true">▶</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           8. CONTACT / CTA — Heartwood Rust bg
+           ============================================================ -->
+      <section id="contact" class="contact" aria-labelledby="contact-heading">
+        <div class="container contact__inner">
+          <p class="section-label section-label--on-rust">07 / Contact</p>
+          <h2 id="contact-heading" class="contact__headline">
+            let&rsquo;s tell something worth passing on.
+          </h2>
+
+          <a class="contact__email" href="mailto:hello@lineagefilms.com.au">
+            hello@lineagefilms.com.au
+          </a>
+
+          <p class="contact__founder">
+            Founded by
+            <a href="https://joelbryant.com.au" rel="noopener">Joel Bryant</a>.
+          </p>
+
+          <ul class="contact__socials" aria-label="Social links">
+            <li>
+              <a
+                href="https://www.instagram.com/joelbryant_"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#" rel="noopener" aria-label="Vimeo">Vimeo</a>
+            </li>
+            <li>
+              <a href="#" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         9. FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <img
+            src="/public/logo.svg"
+            alt=""
+            width="32"
+            height="32"
+            onerror="this.onerror=null;this.src='/public/logo.png';"
+          />
+          <span class="site-footer__name">Lineage Films</span>
+        </div>
+
+        <p class="site-footer__meta">
+          Byron Bay, Australia &middot; Worldwide
+        </p>
+
+        <p class="site-footer__eco">
+          Part of the Joel Bryant ecosystem &mdash;
+          <a href="https://joinnorthstar.co" rel="noopener">NorthStar</a>
+          &middot;
+          <a href="https://joelbryant.com.au" rel="noopener">Joel Bryant</a>
+        </p>
+
+        <p class="site-footer__copy">
+          &copy; <span data-year>2026</span> Lineage Films. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>
