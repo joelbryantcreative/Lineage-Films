@@ -620,107 +620,188 @@ p { margin: 0; }
 }
 
 /* -------------------------------------------------------------
-   7. Work / Projects
+   7. Work / Projects — brand-wall grid (edge-to-edge tiles)
    ------------------------------------------------------------- */
 .work {
-  background: var(--bone-soft);
+  background: var(--parchment);
   color: var(--text);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-2xl) 0 0;
 }
 
+/* Grid sits outside the container — full bleed, no gaps between tiles */
 .work__grid {
   display: grid;
-  gap: var(--space-lg);
   grid-template-columns: 1fr;
+  gap: 0;
+  margin-top: var(--space-xl);
 }
 
-@media (min-width: 48rem) {
-  .work__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl) var(--space-lg);
-  }
+@media (min-width: 40rem) {
+  .work__grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-.work-card__media {
+@media (min-width: 64rem) {
+  .work__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tile: 16:9 button with a logo (and optional backdrop image) */
+.work-card__tile {
   position: relative;
   aspect-ratio: 16 / 9;
-  background: #000;
-  margin-bottom: 1.25rem;
-  overflow: hidden;
-}
-
-.work-card__media iframe {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-/* GIF / image poster, click to swap in the Vimeo iframe */
-.work-card__poster {
   padding: 0;
   border: 0;
-  background: #000;
   cursor: pointer;
   display: block;
-  width: 100%;
+  background: var(--loam);
+  overflow: hidden;
+  outline-offset: -2px;
 }
 
-.work-card__poster img {
+/* Subtle inner border so adjacent tiles read as separate */
+.work-card__tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(232, 201, 160, 0.06);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.work-card__backdrop {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 600ms var(--ease), filter 300ms var(--ease);
+  opacity: 0.7;
+  transition: opacity 400ms var(--ease), transform 700ms var(--ease);
+  z-index: 1;
 }
 
-.work-card__poster:hover img,
-.work-card__poster:focus-visible img {
-  transform: scale(1.02);
-  filter: brightness(1.05);
+.work-card__tile--has-backdrop {
+  background: #000;
 }
 
-.work-card__play-icon {
+/* Brand logo lockup, centered over the tile */
+.work-card__brand {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  padding: 12% 14%;
+  z-index: 2;
+  transition: transform 500ms var(--ease), opacity 300ms var(--ease);
+}
+
+.work-card__brand img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1) sepia(0.35) saturate(0.6)
+    hue-rotate(-10deg) opacity(0.95);
+}
+
+/* Lineage's own logo keeps its native colours (the brand mark) */
+.work-card__brand img[alt="Lineage Films"] { filter: none; }
+
+/* Collab lockup: two logos with × between */
+.work-card__brand--collab img { max-height: 70%; }
+
+.work-card__cross {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1;
+  color: rgba(232, 201, 160, 0.75);
+  flex-shrink: 0;
+}
+
+/* Hover: backdrop lifts slightly, logo eases */
+.work-card__tile:hover .work-card__backdrop,
+.work-card__tile:focus-visible .work-card__backdrop {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+.work-card__tile:hover .work-card__brand,
+.work-card__tile:focus-visible .work-card__brand {
+  transform: scale(0.98);
+}
+
+/* Play affordance — circle with triangle, fades in on hover */
+.work-card__tile::after {
+  content: "▶";
   position: absolute;
   top: 50%;
   left: 50%;
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(26, 24, 20, 0.55);
+  background: rgba(26, 24, 20, 0.65);
   color: var(--tallow);
-  display: grid;
-  place-items: center;
   font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-left: 4px; /* optical centring of the triangle */
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  transition: background 200ms var(--ease), transform 200ms var(--ease);
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0;
+  transition: opacity 300ms var(--ease), transform 300ms var(--ease),
+    background 200ms var(--ease);
+  pointer-events: none;
+  z-index: 4;
 }
 
-.work-card__poster:hover .work-card__play-icon,
-.work-card__poster:focus-visible .work-card__play-icon {
-  background: var(--heartwood);
-  transform: translate(-50%, -50%) scale(1.05);
+.work-card__tile:hover::after,
+.work-card__tile:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  background-color: var(--heartwood);
 }
 
-.work-card__client {
+/* Tile (after click) — iframe wrapper replaces the button */
+.work-card__tile--playing { background: #000; }
+.work-card__tile--playing iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* Meta below the tile — small, editorial, restrained ('quiet' option) */
+.work-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem clamp(1.25rem, 2.5vw, 2rem) clamp(2rem, 4vw, 3rem);
+}
+
+.work-card__genre {
   font-family: var(--font-mono);
   font-size: var(--fs-eyebrow);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--smoke);
-  margin-bottom: 0.5rem;
 }
 
 .work-card__title {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  font-weight: 400;
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 1.9vw, 1.75rem);
+  font-weight: 500;
   letter-spacing: -0.005em;
+  line-height: 1.15;
+  color: var(--text);
 }
 
 /* -------------------------------------------------------------

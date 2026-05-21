@@ -124,9 +124,10 @@
       );
       iframe.setAttribute("allowfullscreen", "");
 
-      // Reuse the poster's media slot so the layout doesn't jump
+      // Replace the poster button with a tile div containing the iframe
+      // so the layout doesn't jump.
       var wrap = document.createElement("div");
-      wrap.className = "work-card__media";
+      wrap.className = "work-card__tile work-card__tile--playing";
       wrap.appendChild(iframe);
       poster.replaceWith(wrap);
     });
