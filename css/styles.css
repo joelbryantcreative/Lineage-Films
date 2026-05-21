@@ -678,7 +678,7 @@ p { margin: 0; }
 }
 
 .work-card__still {
-  opacity: 0.78;
+  opacity: 1;
   transition: opacity 400ms var(--ease), transform 800ms var(--ease);
 }
 
