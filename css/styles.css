@@ -687,6 +687,14 @@ p { margin: 0; }
   transition: opacity 400ms var(--ease);
 }
 
+/* Vimeo background-mode iframe: no border, ignore object-fit (iframes
+   don't support it). Tile is 16:9 and the video is 16:9, so 100% fills
+   cleanly. */
+iframe.work-card__preview {
+  border: 0;
+  pointer-events: none;
+}
+
 .work-card__tile:hover .work-card__still,
 .work-card__tile:focus-visible .work-card__still {
   opacity: 0;

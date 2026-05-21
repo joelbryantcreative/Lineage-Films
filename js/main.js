@@ -116,22 +116,46 @@
       inserted = true;
       var src = tile.getAttribute("data-preview");
       if (!src) return;
-      var ext = src.split(".").pop().toLowerCase().split("?")[0];
 
-      if (ext === "mp4" || ext === "webm" || ext === "mov") {
-        previewEl = document.createElement("video");
-        previewEl.muted = true;
-        previewEl.loop = true;
-        previewEl.playsInline = true;
-        previewEl.preload = "auto";
-        previewEl.src = src;
+      // Vimeo URL? -> iframe in background mode (silent autoplay loop)
+      var vimeoMatch =
+        src.match(/vimeo\.com\/(\d+)/) ||
+        src.match(/player\.vimeo\.com\/video\/(\d+)/);
+
+      if (vimeoMatch) {
+        var id = vimeoMatch[1];
+        previewEl = document.createElement("iframe");
+        previewEl.src =
+          "https://player.vimeo.com/video/" +
+          encodeURIComponent(id) +
+          "?background=1&autoplay=1&loop=1&muted=1&autopause=0&dnt=1";
+        previewEl.setAttribute("frameborder", "0");
+        previewEl.setAttribute(
+          "allow",
+          "autoplay; fullscreen; picture-in-picture"
+        );
+        previewEl.setAttribute("allowfullscreen", "");
+        previewEl.setAttribute("tabindex", "-1");
+        previewEl.setAttribute("aria-hidden", "true");
+        previewEl.title = "";
+        previewEl.className = "work-card__preview work-card__preview--vimeo";
       } else {
-        previewEl = document.createElement("img");
-        previewEl.src = src;
-        previewEl.alt = "";
-        previewEl.decoding = "async";
+        var ext = src.split(".").pop().toLowerCase().split("?")[0];
+        if (ext === "mp4" || ext === "webm" || ext === "mov") {
+          previewEl = document.createElement("video");
+          previewEl.muted = true;
+          previewEl.loop = true;
+          previewEl.playsInline = true;
+          previewEl.preload = "auto";
+          previewEl.src = src;
+        } else {
+          previewEl = document.createElement("img");
+          previewEl.src = src;
+          previewEl.alt = "";
+          previewEl.decoding = "async";
+        }
+        previewEl.className = "work-card__preview";
       }
-      previewEl.className = "work-card__preview";
 
       // Insert before the brand layer so the logo stays on top
       var brand = tile.querySelector(".work-card__brand");
