@@ -231,7 +231,7 @@ p { margin: 0; }
 }
 
 .site-header.is-scrolled {
-  background: rgba(61, 68, 56, 0.92);
+  background: rgba(26, 24, 20, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--rule-on-dark);
@@ -320,7 +320,7 @@ p { margin: 0; }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--deep-forest);
+    background: var(--loam);
     color: var(--bone);
     border-top: 1px solid var(--rule-on-dark);
     max-height: 0;
@@ -506,7 +506,7 @@ p { margin: 0; }
    6. Approach
    ------------------------------------------------------------- */
 .approach {
-  background: var(--deep-forest);
+  background: var(--heartwood);
   color: var(--text-on-dark);
   padding: var(--space-2xl) 0;
 }
@@ -678,7 +678,7 @@ p { margin: 0; }
    8. Services
    ------------------------------------------------------------- */
 .services {
-  background: var(--deep-forest);
+  background: var(--heartwood);
   color: var(--text-on-dark);
   padding: var(--space-2xl) 0;
 }
@@ -697,7 +697,7 @@ p { margin: 0; }
 }
 
 .service-card {
-  background: var(--deep-forest);
+  background: var(--heartwood);
   padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 2.5vw, 2rem);
   display: flex;
   flex-direction: column;
@@ -709,7 +709,7 @@ p { margin: 0; }
   font-size: var(--fs-eyebrow);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--heartwood-rust);
+  color: rgba(232, 201, 160, 0.65);
 }
 
 .service-card__title {
@@ -770,7 +770,7 @@ p { margin: 0; }
    10. Testimonials
    ------------------------------------------------------------- */
 .testimonials {
-  background: var(--deep-forest);
+  background: var(--heartwood);
   color: var(--text-on-dark);
   padding: var(--space-2xl) 0;
 }
@@ -795,7 +795,7 @@ p { margin: 0; }
   margin: 0 0 1.5rem;
   font-style: italic;
   padding-left: 1rem;
-  border-left: 2px solid var(--heartwood-rust);
+  border-left: 2px solid var(--tallow);
 }
 
 .testimonial__attr {
