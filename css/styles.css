@@ -907,9 +907,16 @@ p { margin: 0; }
   text-align: center;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 40rem) {
   .trusted__grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+@media (min-width: 64rem) {
+  .trusted__grid {
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--space-xl) var(--space-lg);
   }
 }
