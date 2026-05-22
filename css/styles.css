@@ -70,7 +70,7 @@
 @media (min-width: 48rem) {
   :root {
     --container-pad: 2.25rem;
-    --header-h: 5.75rem;
+    --header-h: 5rem;
   }
 }
 
@@ -244,13 +244,13 @@ p { margin: 0; }
 }
 
 .site-header__logo img {
-  height: 2.5rem;
+  height: 1.5rem;
   width: auto;
   display: block;
 }
 
 @media (min-width: 48rem) {
-  .site-header__logo img { height: 3.75rem; }
+  .site-header__logo img { height: 1.875rem; }
 }
 
 .site-nav ul {
