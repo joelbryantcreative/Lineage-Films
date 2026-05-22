@@ -695,10 +695,13 @@ iframe.work-card__preview {
   pointer-events: none;
 }
 
-.work-card__tile:hover .work-card__still,
-.work-card__tile:focus-visible .work-card__still {
+.work-card__tile[data-preview]:hover .work-card__still,
+.work-card__tile[data-preview]:focus-visible .work-card__still {
   opacity: 0;
 }
+
+/* Tiles without a link (coming-soon) aren't clickable — change cursor */
+.work-card__tile:not([href]) { cursor: default; }
 
 .work-card__tile:hover .work-card__preview,
 .work-card__tile:focus-visible .work-card__preview {
