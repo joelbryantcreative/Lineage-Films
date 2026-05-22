@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lineagefilms.com.au/sitemap.xml
