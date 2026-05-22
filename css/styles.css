@@ -1355,6 +1355,43 @@ iframe.work-card__preview {
   outline: none;
 }
 
+.contact__submit:disabled {
+  opacity: 0.5;
+  cursor: progress;
+}
+
+/* Inline success message — appears in place of the form after a
+   successful AJAX submission */
+.contact__success {
+  max-width: 32rem;
+  margin-top: var(--space-md);
+  padding: var(--space-md) 0;
+  text-align: left;
+  animation: contact-success-in 400ms var(--ease);
+}
+
+.contact__success[hidden] { display: none; }
+
+.contact__success-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 400;
+  color: var(--tallow);
+  margin-bottom: 0.5rem;
+}
+
+.contact__success-body {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: rgba(232, 201, 160, 0.8);
+}
+
+@keyframes contact-success-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .contact__founder {
   font-family: var(--font-mono);
   font-size: 0.78rem;

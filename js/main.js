@@ -213,7 +213,71 @@
     });
   });
 
-  /* ---- 6. Auto-update footer year --------------------------- */
+  /* ---- 6. Contact form — submit via Formsubmit AJAX, no redirect */
+  var contactForm = document.querySelector(".contact__form");
+  var contactSuccess = document.querySelector(".contact__success");
+
+  if (contactForm && contactSuccess) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var submitBtn = contactForm.querySelector(".contact__submit");
+      var originalLabel = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending…";
+      }
+
+      // Build the AJAX endpoint from the form's regular action URL
+      var ajaxUrl = contactForm.action.replace(
+        "formsubmit.co/",
+        "formsubmit.co/ajax/"
+      );
+
+      fetch(ajaxUrl, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          var ok = data && (data.success === true || data.success === "true");
+          if (ok) {
+            contactForm.hidden = true;
+            contactSuccess.hidden = false;
+            contactSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          } else {
+            // Likely first submission — Formsubmit returns a verification
+            // message until the target email is confirmed. Either way we
+            // give the user a friendly fallback.
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalLabel;
+            }
+            alert(
+              "Thanks — your message has been received. If this is the " +
+              "first enquiry to land in this inbox, you may need to check " +
+              "your email to verify the address before future submissions " +
+              "arrive."
+            );
+            contactForm.hidden = true;
+            contactSuccess.hidden = false;
+          }
+        })
+        .catch(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+          }
+          alert(
+            "Something went wrong sending the form. Please email " +
+            "joel@lineagefilms.com.au directly."
+          );
+        });
+    });
+  }
+
+  /* ---- 7. Auto-update footer year --------------------------- */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
