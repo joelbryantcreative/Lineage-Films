@@ -1031,7 +1031,7 @@ iframe.work-card__preview {
 .testimonials {
   background: var(--parchment);
   color: var(--text);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
 }
 
 .testimonials .section-label { color: var(--smoke); }
