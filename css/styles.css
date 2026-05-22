@@ -596,7 +596,7 @@ p { margin: 0; }
   .approach__grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-2xl);
-    align-items: start;
+    align-items: center;
   }
 }
 
