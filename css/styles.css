@@ -618,6 +618,18 @@ p { margin: 0; }
 
 .approach__manifesto + .approach__manifesto { margin-top: var(--space-sm); }
 
+/* Fingerprint mark inline at the end of the coda line. Replaces the
+   period — the literal mark stands in for it. The Heartwood circle
+   of the badge blends with the section background; only the Tallow
+   fingerprint inside reads. */
+.manifesto__mark {
+  display: inline-block;
+  height: 1.4em;
+  width: auto;
+  vertical-align: -0.3em;
+  margin-left: 0.15em;
+}
+
 .approach__pillars {
   display: flex;
   flex-direction: column;
