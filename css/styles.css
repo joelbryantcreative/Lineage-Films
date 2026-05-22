@@ -293,7 +293,7 @@ p { margin: 0; }
   justify-content: space-between;
   gap: var(--space-md);
   padding: 1rem 1.5rem;
-  background: rgba(26, 24, 20, 0.18);
+  background: rgba(26, 24, 20, 0.06);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   color: var(--bone);
@@ -496,10 +496,10 @@ p { margin: 0; }
   background:
     linear-gradient(
       180deg,
-      rgba(26, 24, 20, 0.55) 0%,
+      rgba(26, 24, 20, 0.3) 0%,
       rgba(26, 24, 20, 0.35) 30%,
       rgba(26, 24, 20, 0.35) 70%,
-      rgba(26, 24, 20, 0.7) 100%
+      rgba(26, 24, 20, 0.55) 100%
     );
   pointer-events: none;
 }
