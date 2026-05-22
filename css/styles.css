@@ -222,12 +222,16 @@ p { margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
-  padding: 0.875rem var(--container-pad);
+  padding: 1rem 1.5rem;
   background: transparent;
   color: var(--bone);
   transition: background 300ms var(--ease), color 300ms var(--ease),
     border-color 300ms var(--ease);
   border-bottom: 1px solid transparent;
+}
+
+@media (min-width: 48rem) {
+  .site-header { padding: 1.125rem 3.5rem; }
 }
 
 .site-header.is-scrolled {
@@ -244,13 +248,13 @@ p { margin: 0; }
 }
 
 .site-header__logo img {
-  height: 1.5rem;
+  height: 1.75rem;
   width: auto;
   display: block;
 }
 
 @media (min-width: 48rem) {
-  .site-header__logo img { height: 1.875rem; }
+  .site-header__logo img { height: 2.25rem; }
 }
 
 .site-nav ul {
