@@ -1395,9 +1395,8 @@ iframe.work-card__preview {
 
 @media (min-width: 48rem) {
   .site-footer__inner {
-    grid-template-columns: auto 1fr auto;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
 }
 
@@ -1526,6 +1525,7 @@ iframe.work-card__preview {
 .site-footer__eco a { border-bottom: 1px solid var(--rule-on-dark); }
 
 @media (min-width: 48rem) {
+  .site-footer__brand { justify-self: center; }
   .site-footer__meta { justify-self: center; text-align: center; }
   .site-footer__eco  { grid-column: 1 / -1; justify-self: center; text-align: center; }
   .site-footer__copy { grid-column: 1 / -1; justify-self: center; text-align: center; color: rgba(232, 201, 160, 0.45); }
