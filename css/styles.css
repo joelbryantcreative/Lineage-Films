@@ -1207,11 +1207,16 @@ iframe.work-card__preview {
 }
 
 .contact__headline {
-  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-size: clamp(1.875rem, 4.5vw, 3.25rem);
   font-weight: 400;
   text-transform: lowercase;
-  max-width: 22ch;
   line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+/* Single-line headline at tablet+; mobile still wraps if too long */
+@media (min-width: 48rem) {
+  .contact__headline { white-space: nowrap; }
 }
 
 .contact__email {
