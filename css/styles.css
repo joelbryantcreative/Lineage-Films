@@ -915,12 +915,14 @@ iframe.work-card__preview {
   gap: 0.75rem;
 }
 
-/* Category name — large primary heading on the card */
+/* Category name — large primary heading on the card. Weight matches
+   .section-heading (400) so visual weight is consistent with the
+   manifesto heading next to it. */
 .service-card__label {
   font-family: var(--font-serif);
   font-size: clamp(1.5rem, 2.4vw, 1.875rem);
-  font-weight: 500;
-  letter-spacing: -0.005em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.1;
   color: var(--tallow);
   margin: 0;
