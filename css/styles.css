@@ -63,6 +63,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/public/fonts/SFProDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* -------------------------------------------------------------
    1. Tokens — colours, type, spacing
    ------------------------------------------------------------- */
@@ -502,9 +510,10 @@ p { margin: 0; }
 }
 
 .hero__eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: var(--fs-eyebrow);
-  letter-spacing: 0.28em;
+  font-weight: 700;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   color: rgba(232, 201, 160, 0.75);
   margin-bottom: clamp(1.25rem, 3vw, 2rem);
