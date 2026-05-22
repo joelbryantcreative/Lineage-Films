@@ -277,6 +277,15 @@ p { margin: 0; }
   margin-bottom: var(--space-lg);
 }
 
+.section-header__intro {
+  font-family: var(--font-serif);
+  font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--smoke);
+  margin-top: var(--space-sm);
+  max-width: 36rem;
+}
+
 @media (min-width: 48rem) {
   .section-header { margin-bottom: var(--space-xl); }
 }
@@ -698,7 +707,7 @@ p { margin: 0; }
 .work {
   background: var(--parchment);
   color: var(--text);
-  padding: var(--space-2xl) 0 0;
+  padding: var(--space-xl) 0 0;
 }
 
 /* Grid sits outside the container — full bleed, no gaps between tiles */
@@ -706,7 +715,7 @@ p { margin: 0; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 0;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-lg);
 }
 
 @media (min-width: 40rem) {
