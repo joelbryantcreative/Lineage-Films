@@ -975,12 +975,12 @@ iframe.work-card__preview {
    10. Testimonials
    ------------------------------------------------------------- */
 .testimonials {
-  background: var(--heartwood);
-  color: var(--text-on-dark);
+  background: var(--parchment);
+  color: var(--text);
   padding: var(--space-2xl) 0;
 }
 
-.testimonials .section-label { color: rgba(232, 201, 160, 0.65); }
+.testimonials .section-label { color: var(--smoke); }
 
 .testimonials__grid {
   display: grid;
@@ -996,11 +996,11 @@ iframe.work-card__preview {
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 1.8vw, 1.5rem);
   line-height: 1.45;
-  color: rgba(232, 201, 160, 0.92);
+  color: var(--text);
   margin: 0 0 1.5rem;
   font-style: italic;
   padding-left: 1rem;
-  border-left: 2px solid var(--tallow);
+  border-left: 2px solid var(--heartwood);
 }
 
 .testimonial__attr {
@@ -1013,8 +1013,8 @@ iframe.work-card__preview {
   text-transform: uppercase;
 }
 
-.testimonial__name { color: var(--bone); }
-.testimonial__role { color: rgba(232, 201, 160, 0.55); }
+.testimonial__name { color: var(--text); }
+.testimonial__role { color: var(--smoke); }
 
 /* -------------------------------------------------------------
    10b. Trusted by — client / partner logo band
