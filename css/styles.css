@@ -573,7 +573,7 @@ p { margin: 0; }
 .approach {
   background: var(--heartwood);
   color: var(--text-on-dark);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-xl) 0;
 }
 
 .approach__grid {
@@ -617,7 +617,7 @@ p { margin: 0; }
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 1.25rem;
-  padding: 1.5rem 0;
+  padding: 1.125rem 0;
   cursor: pointer;
   list-style: none;
   transition: color 200ms var(--ease);
