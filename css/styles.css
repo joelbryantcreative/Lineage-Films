@@ -708,12 +708,18 @@ p { margin: 0; }
   background: var(--loam);
   color: var(--tallow);
   padding: var(--space-xl) 0 0;
+  border-top: 1px solid var(--rule-on-dark);
 }
 
-/* Work section header inherits Loam-friendly text colours */
+/* Work section header: centred as the showpiece + dark-bg colours */
+.work .section-header { text-align: center; }
 .work .section-label { color: rgba(232, 201, 160, 0.65); }
 .work .section-heading { color: var(--tallow); }
-.work .section-header__intro { color: rgba(232, 201, 160, 0.7); }
+.work .section-header__intro {
+  color: rgba(232, 201, 160, 0.7);
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Grid sits outside the container — full bleed, no gaps between tiles */
 .work__grid {
