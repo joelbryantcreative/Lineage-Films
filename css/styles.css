@@ -227,7 +227,7 @@ p { margin: 0; }
   color: var(--bone);
   transition: background 300ms var(--ease), color 300ms var(--ease),
     border-color 300ms var(--ease);
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--rule-on-dark);
 }
 
 @media (min-width: 48rem) {
