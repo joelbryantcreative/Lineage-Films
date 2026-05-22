@@ -1371,8 +1371,8 @@ iframe.work-card__preview {
 
 @media (min-width: 48rem) {
   .site-footer__studio {
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--space-xl);
+    grid-template-columns: 2fr 1fr 1fr 1.2fr;
+    gap: var(--space-lg);
   }
 }
 
@@ -1404,6 +1404,59 @@ iframe.work-card__preview {
   font-family: var(--font-sans);
   font-size: 0.9rem;
   color: rgba(232, 201, 160, 0.75);
+}
+
+/* Contact column: name + email + phone + IG icon */
+.site-footer__name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bone);
+  margin-bottom: 0.875rem;
+}
+
+.site-footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.site-footer__contact-list a {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: rgba(232, 201, 160, 0.85);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 1px;
+}
+
+.site-footer__contact-list a:hover,
+.site-footer__contact-list a:focus-visible {
+  color: var(--tallow);
+}
+
+.site-footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 201, 160, 0.3);
+  color: rgba(232, 201, 160, 0.75);
+  transition: color 200ms var(--ease), border-color 200ms var(--ease),
+    background 200ms var(--ease);
+}
+
+.site-footer__social:hover,
+.site-footer__social:focus-visible {
+  color: var(--heartwood);
+  background: var(--tallow);
+  border-color: var(--tallow);
+  text-decoration: none;
 }
 
 .site-footer__brand {
