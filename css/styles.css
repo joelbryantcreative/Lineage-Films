@@ -98,8 +98,10 @@
     serif;
   --font-sans: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter",
     "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular,
-    Menlo, monospace;
+  /* "mono" labels now use the same SF Pro Display as body. Wide tracking on
+     each label rule gives them their editorial-caps presence. */
+  --font-mono: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Inter",
+    "Segoe UI", Roboto, sans-serif;
 
   /* Scale (clamped) */
   --fs-eyebrow: 0.72rem;       /* mono labels */
