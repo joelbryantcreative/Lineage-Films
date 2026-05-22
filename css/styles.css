@@ -624,10 +624,10 @@ p { margin: 0; }
    fingerprint inside reads. */
 .manifesto__mark {
   display: inline-block;
-  height: 1.4em;
+  height: 2.1em;
   width: auto;
-  vertical-align: -0.3em;
-  margin-left: 0.15em;
+  vertical-align: -0.6em;
+  margin-left: 0.2em;
 }
 
 .approach__pillars {
