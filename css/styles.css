@@ -293,7 +293,9 @@ p { margin: 0; }
   justify-content: space-between;
   gap: var(--space-md);
   padding: 1rem 1.5rem;
-  background: transparent;
+  background: rgba(26, 24, 20, 0.18);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   color: var(--bone);
   transition: background 300ms var(--ease), color 300ms var(--ease),
     border-color 300ms var(--ease);
