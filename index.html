@@ -651,9 +651,48 @@
             let&rsquo;s tell something worth passing on.
           </h2>
 
-          <a class="contact__email" href="mailto:hello@lineagefilms.com.au">
-            hello@lineagefilms.com.au
-          </a>
+          <!--
+            Form submissions are handled by Formsubmit.co. First time you
+            submit the form, Formsubmit sends a verification email to the
+            target address — click the link in that email to activate.
+            From then on, every submission lands in hello@lineagefilms.com.au.
+            To change the target email, update the action URL below.
+          -->
+          <form
+            class="contact__form"
+            action="https://formsubmit.co/hello@lineagefilms.com.au"
+            method="POST"
+            novalidate
+          >
+            <!-- Hidden config fields for Formsubmit -->
+            <input type="hidden" name="_subject" value="New enquiry from lineagefilms.com.au" />
+            <input type="hidden" name="_captcha" value="true" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- Honeypot for bots -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="contact__field">
+              <label for="contact-firstname">First Name</label>
+              <input type="text" id="contact-firstname" name="firstname" required autocomplete="given-name" />
+            </div>
+
+            <div class="contact__field">
+              <label for="contact-lastname">Last Name</label>
+              <input type="text" id="contact-lastname" name="lastname" required autocomplete="family-name" />
+            </div>
+
+            <div class="contact__field">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" required autocomplete="email" />
+            </div>
+
+            <div class="contact__field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="contact__submit">Submit</button>
+          </form>
 
           <p class="contact__founder">
             Founded by

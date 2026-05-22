@@ -1226,6 +1226,92 @@ iframe.work-card__preview {
   color: var(--bone-soft);
 }
 
+/* Contact form — pill-shaped inputs, Tallow on Heartwood */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 32rem;
+  margin-top: var(--space-md);
+  text-align: left;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact__field label {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--tallow);
+  letter-spacing: 0.01em;
+}
+
+.contact__field input,
+.contact__field textarea {
+  background: transparent;
+  border: 1px solid rgba(232, 201, 160, 0.4);
+  color: var(--tallow);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.875rem 1.25rem;
+  width: 100%;
+  transition: border-color 200ms var(--ease), background 200ms var(--ease);
+}
+
+.contact__field input {
+  border-radius: 999px;
+  height: 3rem;
+}
+
+.contact__field textarea {
+  border-radius: 1.5rem;
+  resize: vertical;
+  min-height: 9rem;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  outline: none;
+  border-color: var(--tallow);
+  background: rgba(232, 201, 160, 0.04);
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: rgba(232, 201, 160, 0.4);
+}
+
+.contact__submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--tallow);
+  border-radius: 999px;
+  color: var(--tallow);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+
+.contact__submit:hover,
+.contact__submit:focus-visible {
+  background: var(--tallow);
+  color: var(--heartwood);
+  outline: none;
+}
+
 .contact__founder {
   font-family: var(--font-mono);
   font-size: 0.78rem;
