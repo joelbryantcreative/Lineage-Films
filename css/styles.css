@@ -508,7 +508,10 @@ p { margin: 0; }
   text-transform: uppercase;
   color: rgba(232, 201, 160, 0.75);
   margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.7;
 }
+
+.hero__eyebrow span { display: block; }
 
 .hero__headline {
   font-family: var(--font-serif);
