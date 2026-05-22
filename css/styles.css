@@ -591,11 +591,17 @@ p { margin: 0; }
 
 .approach__intro .section-label { color: rgba(232, 201, 160, 0.65); }
 
+/* Smaller heading scoped to Approach so 'made for what lasts.' fits
+   one line at mobile widths. */
+.approach__intro .section-heading {
+  font-size: clamp(1.75rem, 4.5vw, 3rem);
+}
+
 .approach__manifesto {
   margin-top: var(--space-md);
   font-family: var(--font-serif);
-  font-size: clamp(1.1875rem, 1.6vw, 1.5rem);
-  line-height: 1.45;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.5;
   color: rgba(232, 201, 160, 0.92);
 }
 
