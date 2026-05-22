@@ -705,10 +705,15 @@ p { margin: 0; }
    7. Work / Projects — brand-wall grid (edge-to-edge tiles)
    ------------------------------------------------------------- */
 .work {
-  background: var(--parchment);
-  color: var(--text);
+  background: var(--loam);
+  color: var(--tallow);
   padding: var(--space-xl) 0 0;
 }
+
+/* Work section header inherits Loam-friendly text colours */
+.work .section-label { color: rgba(232, 201, 160, 0.65); }
+.work .section-heading { color: var(--tallow); }
+.work .section-header__intro { color: rgba(232, 201, 160, 0.7); }
 
 /* Grid sits outside the container — full bleed, no gaps between tiles */
 .work__grid {
