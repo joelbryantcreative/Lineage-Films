@@ -213,7 +213,32 @@
     });
   });
 
-  /* ---- 6. Contact form — submit via Formsubmit AJAX, no redirect */
+  /* ---- 6. Project hero — fit player to the video's real aspect ratio
+     Vimeo videos that aren't 16:9 otherwise pillarbox/letterbox inside
+     the fixed 16:9 frame. The Player SDK reports the true dimensions so
+     we size the container exactly and the bars disappear. */
+  var heroPlayer = document.querySelector(".project-hero__player");
+  if (heroPlayer && window.Vimeo) {
+    var heroIframe = heroPlayer.querySelector("iframe");
+    if (heroIframe) {
+      try {
+        var vp = new window.Vimeo.Player(heroIframe);
+        Promise.all([vp.getVideoWidth(), vp.getVideoHeight()])
+          .then(function (dims) {
+            var w = dims[0];
+            var h = dims[1];
+            if (w && h) {
+              heroPlayer.style.aspectRatio = w + " / " + h;
+            }
+          })
+          .catch(function () {});
+      } catch (e) {
+        /* SDK not ready — fall back to the 16:9 CSS default */
+      }
+    }
+  }
+
+  /* ---- 7. Contact form — submit via Formsubmit AJAX, no redirect */
   var contactForm = document.querySelector(".contact__form");
   var contactSuccess = document.querySelector(".contact__success");
 
@@ -277,7 +302,7 @@
     });
   }
 
-  /* ---- 7. Auto-update footer year --------------------------- */
+  /* ---- 8. Auto-update footer year --------------------------- */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
 })();

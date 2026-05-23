@@ -1628,7 +1628,9 @@ iframe.work-card__preview {
 
 .project-hero__player {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9; /* fallback before JS reads the real ratio */
+  max-height: 80vh;
+  margin: 0 auto;
   background: #000;
   overflow: hidden;
   border: 1px solid var(--rule-on-dark);
