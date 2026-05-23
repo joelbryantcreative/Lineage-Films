@@ -1723,7 +1723,7 @@ iframe.work-card__preview {
 }
 
 .project-meta__body {
-  max-width: 60ch;
+  max-width: none;
   color: rgba(232, 201, 160, 0.82);
   font-size: 1.0625rem;
   line-height: 1.6;
