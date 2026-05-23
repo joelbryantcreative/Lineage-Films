@@ -1729,6 +1729,31 @@ iframe.work-card__preview {
   line-height: 1.6;
 }
 
+/* Festival laurels row */
+.project-laurels {
+  list-style: none;
+  margin: var(--space-lg) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.project-laurels__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-laurels__item img {
+  display: block;
+  width: auto;
+  height: clamp(72px, 9vw, 110px);
+  opacity: 0.92;
+}
+
 /* 5. Frames grid (edge-to-edge, 3 col desktop) */
 .project-frames { padding-bottom: var(--space-2xl); }
 
