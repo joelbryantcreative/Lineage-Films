@@ -855,14 +855,22 @@ iframe.work-card__preview {
 }
 
 .work-card__brand img {
-  max-width: 48%;
-  max-height: 10%;
+  max-width: 44%;
+  max-height: 11%;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: brightness(0) invert(1) sepia(0.35) saturate(0.6)
     hue-rotate(-10deg) opacity(0.95);
 }
+
+/* Per-logo tuning. Wide wordmarks read fine at the base height,
+   but stacked icon+text logos are near-square, so the same height
+   cap renders them tiny. These get more height to match the
+   visual weight of the wordmarks. */
+.work-card__brand img[src*="Bytropic"] { max-height: 19%; max-width: 30%; }
+.work-card__brand img[src*="We Forest Earth"] { max-height: 21%; max-width: 26%; }
+.work-card__brand img[src*="Rogue"] { max-height: 23%; max-width: 22%; }
 
 /* Lineage's own logo keeps its native colours and is held tighter
    since it's a compact circular mark, not a wide wordmark */
