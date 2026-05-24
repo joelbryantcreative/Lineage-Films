@@ -326,20 +326,46 @@
       '<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous frame">&#8249;</button>' +
       '<img class="lightbox__img" alt="" />' +
       '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next frame">&#8250;</button>' +
-      '<p class="lightbox__counter" aria-hidden="true"></p>';
+      '<div class="lightbox__thumbs"></div>';
     document.body.appendChild(lb);
 
     var lbImg = lb.querySelector(".lightbox__img");
-    var lbCounter = lb.querySelector(".lightbox__counter");
+    var lbThumbs = lb.querySelector(".lightbox__thumbs");
     var btnClose = lb.querySelector(".lightbox__close");
     var btnPrev = lb.querySelector(".lightbox__nav--prev");
     var btnNext = lb.querySelector(".lightbox__nav--next");
+
+    // Build the thumbnail strip
+    frameImgs.forEach(function (img, i) {
+      var t = document.createElement("button");
+      t.className = "lightbox__thumb";
+      t.type = "button";
+      t.setAttribute("aria-label", "View frame " + (i + 1));
+      var ti = document.createElement("img");
+      ti.src = img.getAttribute("src");
+      ti.alt = "";
+      t.appendChild(ti);
+      t.addEventListener("click", function () {
+        showFrame(i);
+      });
+      lbThumbs.appendChild(t);
+    });
+    var thumbBtns = Array.prototype.slice.call(
+      lbThumbs.querySelectorAll(".lightbox__thumb")
+    );
 
     function showFrame(i) {
       current = (i + frameImgs.length) % frameImgs.length;
       lbImg.setAttribute("src", frameImgs[current].getAttribute("src"));
       lbImg.setAttribute("alt", frameImgs[current].getAttribute("alt") || "");
-      lbCounter.textContent = current + 1 + " / " + frameImgs.length;
+      thumbBtns.forEach(function (b, idx) {
+        b.classList.toggle("is-active", idx === current);
+      });
+      thumbBtns[current].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
     }
 
     function openLightbox(i) {
@@ -355,7 +381,7 @@
     }
 
     frameImgs.forEach(function (img, i) {
-      img.style.cursor = "zoom-in";
+      img.style.cursor = "pointer";
       img.addEventListener("click", function () {
         openLightbox(i);
       });
