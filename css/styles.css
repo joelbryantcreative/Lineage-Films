@@ -872,8 +872,8 @@ iframe.work-card__preview {
 .work-card__brand img[src*="Craved This"] { max-height: 17%; max-width: 50%; }
 .work-card__brand img[src*="Bytropic"] { max-height: 24%; max-width: 36%; }
 .work-card__brand img[src*="We Forest Earth"] {
-  max-height: 52%;
-  max-width: 58%;
+  max-height: 58%;
+  max-width: 64%;
   transform: translateY(9%);
 }
 .work-card__brand img[src*="Rogue"] { max-height: 31%; max-width: 30%; }
