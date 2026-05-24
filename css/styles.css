@@ -878,6 +878,11 @@ iframe.work-card__preview {
 }
 .work-card__brand img[src*="Rogue"] { max-height: 32%; max-width: 31%; }
 .work-card__brand img[src*="Grun"] { max-height: 17%; max-width: 50%; }
+.work-card__brand img[src*="Good Old Days"] {
+  max-height: 13%;
+  max-width: 52%;
+  filter: opacity(0.95);
+}
 
 /* Lineage's own logo keeps its native colours and is held tighter
    since it's a compact circular mark, not a wide wordmark */
@@ -893,40 +898,6 @@ iframe.work-card__preview {
   max-width: 13%;
   max-height: 14%;
 }
-
-/* Text wordmark fallback when no logo PNG is available */
-.work-card__brand--wordmark {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 2.9vw, 2.25rem);
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: -0.06em;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  text-transform: none;
-  padding: 0 6%;
-}
-
-/* Optically centre the visible glyphs: trim the font's built-in
-   leading, then nudge up to balance the descender so the top of the
-   text sits the same distance from the top as the bottom does. */
-@supports (text-box-trim: trim-both) {
-  .work-card__brand--wordmark {
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
-    transform: translateY(-0.08em);
-  }
-}
-
-.work-card__cross {
-  font-family: var(--font-serif);
-  font-size: clamp(1rem, 1.6vw, 1.375rem);
-  line-height: 1;
-  color: rgba(232, 201, 160, 0.7);
-  flex-shrink: 0;
-}
-
 
 /* Tile (after click) — iframe wrapper replaces the button */
 .work-card__tile--playing { background: #000; }
