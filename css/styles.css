@@ -77,8 +77,8 @@
 :root {
   /* Brand palette — sampled from logo, see README */
   --heartwood: #5e2e22; /* primary warm — CTA, brand signature surface */
-  --tallow:    #e8c9a0; /* primary light — text on dark, the mark */
-  --parchment: #f3eada; /* page surface — light sections */
+  --tallow:    #eed3ac; /* primary light — text on dark, the mark */
+  --parchment: #f7f1e4; /* page surface — light sections */
   --loam:      #1a1814; /* deep — hero, footer, near-black with brown undertone */
   --bracken:   #3d4438; /* forest — Approach, Services, warmer than blue-green */
   --moss:      #6f7a5e; /* accent — hover, supporting graphics */
