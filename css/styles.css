@@ -871,7 +871,11 @@ iframe.work-card__preview {
 .work-card__brand img[src*="Flowing Wood"] { max-height: 20%; max-width: 55%; }
 .work-card__brand img[src*="Craved This"] { max-height: 17%; max-width: 50%; }
 .work-card__brand img[src*="Bytropic"] { max-height: 24%; max-width: 36%; }
-.work-card__brand img[src*="We Forest Earth"] { max-height: 46%; max-width: 52%; }
+.work-card__brand img[src*="We Forest Earth"] {
+  max-height: 52%;
+  max-width: 58%;
+  transform: translateY(9%);
+}
 .work-card__brand img[src*="Rogue"] { max-height: 33%; max-width: 32%; }
 .work-card__brand img[src*="Grun"] { max-height: 17%; max-width: 50%; }
 
