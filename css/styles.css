@@ -331,13 +331,13 @@ p { margin: 0; }
 }
 
 .site-header__logo img {
-  height: 1.75rem;
+  height: 2.75rem;
   width: auto;
   display: block;
 }
 
 @media (min-width: 48rem) {
-  .site-header__logo img { height: 2.25rem; }
+  .site-header__logo img { height: 3.5rem; }
 }
 
 .site-nav ul {
