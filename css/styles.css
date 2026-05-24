@@ -1995,5 +1995,5 @@ iframe.work-card__preview {
   #contact { order: 3; }
 
   /* Drop one logo so the grid stays an even count on mobile */
-  .trusted__hide-mobile { display: none; }
+  .trusted__grid li.trusted__hide-mobile { display: none; }
 }
