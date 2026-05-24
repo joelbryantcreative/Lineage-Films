@@ -876,7 +876,7 @@ iframe.work-card__preview {
   max-width: 64%;
   transform: translateY(9%);
 }
-.work-card__brand img[src*="Rogue"] { max-height: 31%; max-width: 30%; }
+.work-card__brand img[src*="Rogue"] { max-height: 32%; max-width: 31%; }
 .work-card__brand img[src*="Grun"] { max-height: 17%; max-width: 50%; }
 
 /* Lineage's own logo keeps its native colours and is held tighter
