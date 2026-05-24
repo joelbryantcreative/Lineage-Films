@@ -131,7 +131,7 @@
   /* Layout */
   --container-max: 78rem;
   --container-pad: 1.25rem;
-  --header-h: 4.5rem;
+  --header-h: 5rem;
 
   /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -140,7 +140,7 @@
 @media (min-width: 48rem) {
   :root {
     --container-pad: 2.25rem;
-    --header-h: 5rem;
+    --header-h: 6rem;
   }
 }
 
@@ -331,13 +331,14 @@ p { margin: 0; }
 }
 
 .site-header__logo img {
-  height: 2.75rem;
+  height: 3.75rem;
   width: auto;
   display: block;
+  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.45));
 }
 
 @media (min-width: 48rem) {
-  .site-header__logo img { height: 3.5rem; }
+  .site-header__logo img { height: 4.75rem; }
 }
 
 .site-nav ul {
