@@ -871,7 +871,7 @@ iframe.work-card__preview {
 .work-card__brand img[src*="Flowing Wood"] { max-height: 20%; max-width: 55%; }
 .work-card__brand img[src*="Craved This"] { max-height: 17%; max-width: 50%; }
 .work-card__brand img[src*="Bytropic"] { max-height: 24%; max-width: 36%; }
-.work-card__brand img[src*="We Forest Earth"] { max-height: 38%; max-width: 46%; }
+.work-card__brand img[src*="We Forest Earth"] { max-height: 46%; max-width: 52%; }
 .work-card__brand img[src*="Rogue"] { max-height: 28%; max-width: 27%; }
 
 /* Lineage's own logo keeps its native colours and is held tighter
