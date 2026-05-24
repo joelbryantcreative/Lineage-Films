@@ -1966,3 +1966,20 @@ iframe.work-card__preview {
   outline: 2px solid var(--parchment);
   outline-offset: -2px;
 }
+
+/* ============================================================
+   Mobile-only layout tweaks
+   ============================================================ */
+@media (max-width: 47.99rem) {
+  /* Move the Trusted band down so it sits just before Testimonials */
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  #trusted { order: 1; }
+  #testimonials { order: 2; }
+  #contact { order: 3; }
+
+  /* Drop one logo so the grid stays an even count on mobile */
+  .trusted__hide-mobile { display: none; }
+}
