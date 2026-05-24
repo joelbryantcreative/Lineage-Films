@@ -908,6 +908,17 @@ iframe.work-card__preview {
   padding: 0 6%;
 }
 
+/* Optically centre the visible glyphs: trim the font's built-in
+   leading, then nudge up to balance the descender so the top of the
+   text sits the same distance from the top as the bottom does. */
+@supports (text-box-trim: trim-both) {
+  .work-card__brand--wordmark {
+    text-box-trim: trim-both;
+    text-box-edge: cap alphabetic;
+    transform: translateY(-0.08em);
+  }
+}
+
 .work-card__cross {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 1.6vw, 1.375rem);
