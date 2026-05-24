@@ -305,4 +305,100 @@
   /* ---- 8. Auto-update footer year --------------------------- */
   var year = document.querySelector("[data-year]");
   if (year) year.textContent = String(new Date().getFullYear());
+
+  /* ---- 9. Frames lightbox gallery --------------------------- */
+  /* Click any frame to open a full-size overlay; arrows / swipe /
+     keyboard step through the set. Built once, only if frames exist. */
+  var frameImgs = Array.prototype.slice.call(
+    document.querySelectorAll(".project-frames__grid img")
+  );
+
+  if (frameImgs.length) {
+    var current = 0;
+
+    var lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.setAttribute("role", "dialog");
+    lb.setAttribute("aria-modal", "true");
+    lb.setAttribute("aria-label", "Frame gallery");
+    lb.innerHTML =
+      '<button class="lightbox__close" type="button" aria-label="Close gallery">&times;</button>' +
+      '<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous frame">&#8249;</button>' +
+      '<img class="lightbox__img" alt="" />' +
+      '<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next frame">&#8250;</button>' +
+      '<p class="lightbox__counter" aria-hidden="true"></p>';
+    document.body.appendChild(lb);
+
+    var lbImg = lb.querySelector(".lightbox__img");
+    var lbCounter = lb.querySelector(".lightbox__counter");
+    var btnClose = lb.querySelector(".lightbox__close");
+    var btnPrev = lb.querySelector(".lightbox__nav--prev");
+    var btnNext = lb.querySelector(".lightbox__nav--next");
+
+    function showFrame(i) {
+      current = (i + frameImgs.length) % frameImgs.length;
+      lbImg.setAttribute("src", frameImgs[current].getAttribute("src"));
+      lbImg.setAttribute("alt", frameImgs[current].getAttribute("alt") || "");
+      lbCounter.textContent = current + 1 + " / " + frameImgs.length;
+    }
+
+    function openLightbox(i) {
+      showFrame(i);
+      lb.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+      btnNext.focus();
+    }
+
+    function closeLightbox() {
+      lb.classList.remove("is-open");
+      document.body.style.overflow = "";
+    }
+
+    frameImgs.forEach(function (img, i) {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", function () {
+        openLightbox(i);
+      });
+    });
+
+    btnClose.addEventListener("click", closeLightbox);
+    btnPrev.addEventListener("click", function () {
+      showFrame(current - 1);
+    });
+    btnNext.addEventListener("click", function () {
+      showFrame(current + 1);
+    });
+
+    // Click the backdrop (not the image or buttons) to close
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb) closeLightbox();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("is-open")) return;
+      if (e.key === "Escape") closeLightbox();
+      else if (e.key === "ArrowLeft") showFrame(current - 1);
+      else if (e.key === "ArrowRight") showFrame(current + 1);
+    });
+
+    // Swipe navigation on touch
+    var touchX = null;
+    lb.addEventListener(
+      "touchstart",
+      function (e) {
+        touchX = e.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+    lb.addEventListener(
+      "touchend",
+      function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) showFrame(current + (dx < 0 ? 1 : -1));
+        touchX = null;
+      },
+      { passive: true }
+    );
+  }
 })();
