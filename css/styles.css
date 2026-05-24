@@ -1058,12 +1058,26 @@ iframe.work-card__preview {
 
 .testimonial__attr {
   display: flex;
-  flex-direction: column;
-  gap: 0.125rem;
+  align-items: center;
+  gap: 0.875rem;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.testimonial__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial__person {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }
 
 .testimonial__name { color: var(--text); }
