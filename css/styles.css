@@ -1196,9 +1196,20 @@ iframe.work-card__preview {
   transition: filter 200ms var(--ease), transform 200ms var(--ease);
 }
 
+/* Per-logo size tuning in the trusted band */
+.trusted__grid img[src*="Ultimate Ears"] { max-height: 3.4rem; }
+.trusted__grid img[src*="Away"] { max-height: 4.75rem; max-width: 90%; }
+.trusted__grid img[src*="We Forest Earth"] { max-height: 4.75rem; }
+.trusted__grid img[src*="Rogue"] { max-height: 4.75rem; }
+
 @media (min-width: 64rem) {
   .trusted__grid li { min-height: 6rem; }
   .trusted__grid img { max-height: 4.75rem; }
+
+  .trusted__grid img[src*="Ultimate Ears"] { max-height: 4rem; }
+  .trusted__grid img[src*="Away"] { max-height: 5.5rem; }
+  .trusted__grid img[src*="We Forest Earth"] { max-height: 5.5rem; }
+  .trusted__grid img[src*="Rogue"] { max-height: 5.5rem; }
 }
 
 .trusted__grid li:hover img {
