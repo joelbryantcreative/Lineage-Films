@@ -901,6 +901,7 @@ iframe.work-card__preview {
   font-weight: 500;
   font-style: italic;
   letter-spacing: -0.06em;
+  line-height: 1;
   color: #fff;
   text-align: center;
   text-transform: none;
