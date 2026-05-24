@@ -318,6 +318,7 @@
 
     var lb = document.createElement("div");
     lb.className = "lightbox";
+    lb.tabIndex = -1;
     lb.setAttribute("role", "dialog");
     lb.setAttribute("aria-modal", "true");
     lb.setAttribute("aria-label", "Frame gallery");
@@ -372,7 +373,7 @@
       showFrame(i);
       lb.classList.add("is-open");
       document.body.style.overflow = "hidden";
-      btnNext.focus();
+      lb.focus();
     }
 
     function closeLightbox() {
